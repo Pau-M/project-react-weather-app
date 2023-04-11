@@ -1,14 +1,27 @@
 .Weather .container {
   max-width: 600px;
   margin: 50px auto;
-  background: url("https://images.pexels.com/photos/3941855/pexels-photo-3941855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /*background: url("https://images.pexels.com/photos/3941855/pexels-photo-3941855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 2px 10px 27px rgba(0, 0, 0, 0.2);
+  background-size: cover;*/
+  backdrop-filter: blur(20px);
+
+  box-shadow: 2px 10px 27px 5px rgba(0, 0, 0, 0.2);
 }
 form {
   width: 100%;
 }
+.btn {
+  color: #3c4245;
+  background-color: transparent;
+  border-color: #3c4245;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #3c4245;
+  border-color: #3c4245;
+}
+
 h1 {
   font-size: 40px;
 }
@@ -18,17 +31,22 @@ h2 {
 .unit {
   font-size: 20px;
   font-weight: lighter;
+  vertical-align: top;
 }
 .properties {
   max-width: 400px;
   margin: 0 auto;
-  backdrop-filter: blur(10px);
+
   border-radius: 10px;
-  box-shadow: 2px 10px 27px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 10px 27px 3px rgba(0, 0, 0, 0.2);
 }
 .properties p {
   margin: 5px;
   font-size: 15px;
+}
+small {
+  font-size: 12px;
+  opacity: 0.7;
 }
 .icons {
   font-size: 28px;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import VideoBackground from "./VideoBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +11,12 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 export default function Weather() {
   return (
     <div className="Weather">
+      <VideoBackground
+        url="https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4"
+        playing={true}
+        loop={true}
+        volume={0}
+      />
       <div className="container border rounded p-3">
         <form>
           <div className="row align-items-center justify-content-center">
@@ -22,10 +29,10 @@ export default function Weather() {
               ></input>
             </div>
             <div className="col-3 p-0 text-start">
-              <button type="submit" className="btn btn-outline-light m-1">
+              <button type="submit" className="btn btn-primary guzik m-1">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
-              <button type="button" className="btn btn-outline-light">
+              <button type="button" className="btn btn-outline-secondary">
                 <FontAwesomeIcon icon={faLocationDot} />
               </button>
             </div>
@@ -48,17 +55,17 @@ export default function Weather() {
             <div className="col-4">
               <FontAwesomeIcon icon={faWind} className="icons" />
               <p>10 km/h</p>
-              <p className="opacity-75">wind</p>
+              <small>wind</small>
             </div>
             <div className="col-4">
               <FontAwesomeIcon icon={faDroplet} className="icons" />
               <p>50 %</p>
-              <p className="opacity-75">humidity</p>
+              <small>humidity</small>
             </div>
             <div className="col-4">
               <FontAwesomeIcon icon={faEye} className="icons" />
               <p>10 km</p>
-              <p className="opacity-75">visibility</p>
+              <small>visibility</small>
             </div>
           </div>
         </div>
