@@ -8,47 +8,51 @@
 
   box-shadow: 2px 10px 27px 5px rgba(0, 0, 0, 0.2);
 }
-form {
+.Weather form {
   width: 100%;
 }
-.btn {
+.Weather .btn {
   color: #3c4245;
   background-color: transparent;
   border-color: #3c4245;
 }
-.btn:hover {
+.Weather .btn:hover {
   color: #fff;
   background-color: #3c4245;
   border-color: #3c4245;
 }
 
-h1 {
-  font-size: 40px;
-}
-h2 {
-  font-size: 34px;
-  color: #303841;
-}
-.unit {
-  font-size: 20px;
-  font-weight: lighter;
-  vertical-align: top;
-}
-.properties {
+.WeatherProps .properties {
   max-width: 400px;
   margin: 0 auto;
-
   border-radius: 10px;
   box-shadow: 2px 10px 27px 3px rgba(0, 0, 0, 0.2);
 }
-.properties p {
+.WeatherProps h2 {
+  font-size: 34px;
+  color: #303841;
+}
+.WeatherProps .properties p {
   margin: 5px;
   font-size: 15px;
 }
-small {
+.WeatherProps small {
   font-size: 12px;
   opacity: 0.7;
 }
-.icons {
-  font-size: 28px;
+.WeatherProps .icons {
+  font-size: 25px;
+}
+
+.weatherTemperature h1 {
+  font-size: 42px;
+}
+.weatherTemperature .unit {
+  font-size: 20px;
+  vertical-align: top;
+}
+.weatherTemperature a {
+  text-decoration: none;
+  color: #5c6061fd;
+  font-weight: lighter;
 }

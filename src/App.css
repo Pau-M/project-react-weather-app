@@ -3,3 +3,18 @@
   color: #3c4245;
   font-family: "Poppins", serif;
 }
+.App footer {
+  font-size: 13px;
+  color: #545a5e;
+  margin: 10px;
+  line-height: 25px;
+}
+
+.App footer a {
+  text-decoration: none;
+}
+
+.App .icon {
+  font-size: 20px;
+  color: #054f74;
+}

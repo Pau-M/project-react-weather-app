@@ -36,6 +36,17 @@ export default function Weather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+  function localWeather(position) {
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function geoLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(localWeather);
+  }
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -58,10 +69,14 @@ export default function Weather(props) {
                 ></input>
               </div>
               <div className="col-3 p-0 text-start">
-                <button type="submit" className="btn btn-primary guzik m-1">
+                <button type="submit" className="btn btn-outline-secondary m-1">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
-                <button type="button" className="btn btn-outline-secondary">
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  onClick={geoLocation}
+                >
                   <FontAwesomeIcon icon={faLocationDot} />
                 </button>
               </div>
