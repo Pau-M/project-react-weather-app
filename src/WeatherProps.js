@@ -12,10 +12,10 @@ export default function WeatherProps(props) {
   return (
     <div className="WeatherProps mt-3 mb-4">
       <h2>{props.data.city}</h2>
-      <p>
+      <span>
         <DateFormat date={props.data.date} />
-      </p>
-      <WeatherIcon code={props.data.icon} />
+      </span>
+      <WeatherIcon code={props.data.icon} size={120} />
       <p>{props.data.description}</p>
       <WeatherTemperature celsiusTemp={props.data.temperature} />
       <div className="properties">
@@ -32,7 +32,7 @@ export default function WeatherProps(props) {
           </div>
           <div className="col-4">
             <FontAwesomeIcon icon={faEye} className="icons" />
-            <p>{props.data.visibility} m</p>
+            <p>{props.data.visibility / 1000} km</p>
             <small>visibility</small>
           </div>
         </div>

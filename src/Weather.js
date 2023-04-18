@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
+
 import VideoBackground from "./VideoBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -39,8 +41,8 @@ export default function Weather(props) {
   function localWeather(position) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let lat = position.coords.latitude;
-    let long = position.coords.longitude;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
+    let lon = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
   function geoLocation(event) {
@@ -69,11 +71,16 @@ export default function Weather(props) {
                 ></input>
               </div>
               <div className="col-3 p-0 text-start">
-                <button type="submit" className="btn btn-outline-secondary m-1">
+                <button
+                  type="submit"
+                  title="Search"
+                  className="btn btn-outline-secondary m-1"
+                >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 <button
                   type="button"
+                  title="Geolocation"
                   className="btn btn-outline-secondary"
                   onClick={geoLocation}
                 >
@@ -83,7 +90,8 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherProps data={weatherData} />
-          <hr />
+
+          <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
       </div>
     );
