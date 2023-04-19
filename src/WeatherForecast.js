@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
 import ForecastDay from "./ForecastDay";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function WeatherForecast(props) {
   const [loaded, loading] = useState(false);
   const [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    loading(false);
+  }, [props.coordinates]);
 
   function handleForecast(response) {
     loading(true);
@@ -37,6 +42,6 @@ export default function WeatherForecast(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleForecast);
 
-    return <div>Loading...</div>;
+    return <RotatingLines />;
   }
 }

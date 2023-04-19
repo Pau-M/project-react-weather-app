@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import WeatherProps from "./WeatherProps";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -90,13 +91,13 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherProps data={weatherData} />
-
+          <hr />
           <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
       </div>
     );
   } else {
     search();
-    return "Loading...";
+    return <RotatingLines />;
   }
 }

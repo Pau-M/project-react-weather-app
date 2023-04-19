@@ -22,6 +22,7 @@ function App() {
           href="https://github.com/Pau-M/project-react-weather-app"
           target="_blank"
           rel="noopener noreferrer"
+          title="Project on GitHub"
         >
           <FontAwesomeIcon icon={faSquareGithub} className="icon" />
         </a>
