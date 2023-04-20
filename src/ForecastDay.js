@@ -14,7 +14,7 @@ export default function ForecastDay(props) {
     <div>
       <div className="weekDay">{days()}</div>
       <div className="forecastIcon m-2">
-        <WeatherIcon code={props.data.weather[0].icon} size={50} />
+        <WeatherIcon code={props.data.weather[0].icon} size={40} />
       </div>
       <div className="forecastTemp">
         <span className="maxTemp">{Math.round(props.data.temp.max)}°</span>

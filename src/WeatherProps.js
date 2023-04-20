@@ -15,7 +15,7 @@ export default function WeatherProps(props) {
       <span>
         <DateFormat date={props.data.date} />
       </span>
-      <WeatherIcon code={props.data.icon} size={120} />
+      <WeatherIcon code={props.data.icon} size={100} />
       <p>{props.data.description}</p>
       <WeatherTemperature celsiusTemp={props.data.temperature} />
       <div className="properties">

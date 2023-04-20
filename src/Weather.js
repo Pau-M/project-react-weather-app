@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherForecast from "./WeatherForecast";
+import sky from "./sky.mp4";
 
 import VideoBackground from "./VideoBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -53,12 +54,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <VideoBackground
-          url="https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4"
-          playing={true}
-          loop={true}
-          volume={0}
-        />
+        <VideoBackground url={sky} playing={true} loop={true} volume={0} />
         <div className="container border rounded p-3">
           <form onSubmit={handleSubmit}>
             <div className="row align-items-center justify-content-center">
@@ -67,7 +63,7 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter a city..."
                   autoFocus={false}
-                  className="w-100 p-2 border border-1 rounded"
+                  className="w-100 search border border-1 rounded"
                   onChange={cityChange}
                 ></input>
               </div>

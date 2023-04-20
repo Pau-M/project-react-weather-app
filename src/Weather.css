@@ -1,12 +1,15 @@
 .Weather .container {
-  max-width: 600px;
+  max-width: 550px;
   margin: 50px auto;
   backdrop-filter: blur(20px);
-
   box-shadow: 2px 10px 27px 5px rgba(0, 0, 0, 0.2);
 }
 .Weather form {
   width: 100%;
+}
+.Weather .search {
+  padding: 6px;
+  font-size: 15px;
 }
 .Weather .btn {
   color: #3c4245;
@@ -32,14 +35,14 @@
 }
 .WeatherProps .properties p {
   margin: 5px;
-  font-size: 15px;
+  font-size: 13px;
 }
 .WeatherProps small {
   font-size: 12px;
   opacity: 0.7;
 }
 .WeatherProps .icons {
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .weatherTemperature h1 {

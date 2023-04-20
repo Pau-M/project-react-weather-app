@@ -19,7 +19,7 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast p-3">
+      <div className="WeatherForecast">
         <div className="row d-flex justify-content-evenly">
           {forecast.map(function (dailyWeather, index) {
             if (index < 5) {
